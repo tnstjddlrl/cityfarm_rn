@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "457072292825",
+    "project_id": "cityfarmer-b052b",
+    "storage_bucket": "cityfarmer-b052b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:457072292825:android:c9a8bea5467bbb1a7fdfc8",
+        "android_client_info": {
+          "package_name": "com.semicolons.cityfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "457072292825-uovtsvg8se7o9ik2tr5a77fa3kkv65cl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCu8H7uZrg7qgxvPPDyRdZMpgJ2soPwLSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "457072292825-uovtsvg8se7o9ik2tr5a77fa3kkv65cl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
