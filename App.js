@@ -75,24 +75,26 @@ const App = () => {
 
 
   useEffect(() => {
-    requestMultiple([
-      PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
-      PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
-      // PERMISSIONS.ANDROID.READ_PHONE_NUMBERS,
-      // PERMISSIONS.ANDROID.READ_PHONE_STATE,
-      PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
-      PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE
-    ]).then((statuses) => {
-      console.log('ACCESS_COARSE_LOCATION', statuses[PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION]);
-      console.log('ACCESS_FINE_LOCATION', statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION]);
-      // console.log('READ_PHONE_NUMBERS', statuses[PERMISSIONS.ANDROID.READ_PHONE_NUMBERS]);
-      // console.log('READ_PHONE_STATE', statuses[PERMISSIONS.ANDROID.READ_PHONE_STATE]);
-    }).then(() => {
-      DeviceInfo.getPhoneNumber().then((phoneNumber) => {
-        console.log(`폰번호 : ${phoneNumber.replace('+82', '0')}`)
-        setPhone(phoneNumber.replace('+82', '0'))
-      });
-    })
+    if (Platform.OS == 'android') {
+      requestMultiple([
+        PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
+        PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+        // PERMISSIONS.ANDROID.READ_PHONE_NUMBERS,
+        // PERMISSIONS.ANDROID.READ_PHONE_STATE,
+        PERMISSIONS.ANDROID.READ_EXTERNAL_STORAGE,
+        PERMISSIONS.ANDROID.WRITE_EXTERNAL_STORAGE
+      ]).then((statuses) => {
+        console.log('ACCESS_COARSE_LOCATION', statuses[PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION]);
+        console.log('ACCESS_FINE_LOCATION', statuses[PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION]);
+        // console.log('READ_PHONE_NUMBERS', statuses[PERMISSIONS.ANDROID.READ_PHONE_NUMBERS]);
+        // console.log('READ_PHONE_STATE', statuses[PERMISSIONS.ANDROID.READ_PHONE_STATE]);
+      }).then(() => {
+        DeviceInfo.getPhoneNumber().then((phoneNumber) => {
+          console.log(`폰번호 : ${phoneNumber.replace('+82', '0')}`)
+          setPhone(phoneNumber.replace('+82', '0'))
+        });
+      })
+    }
   }, [])
 
 
@@ -251,6 +253,7 @@ const App = () => {
     }
 
     if (event.nativeEvent.data == 'phonenumber') {
+      console.log('phonenumber 받음')
       if (phone[0] === '+' || phone === '') {
         rnw.postMessage('phonenumber/Foreigner')
         console.log('phonenumber/Foreigner')
