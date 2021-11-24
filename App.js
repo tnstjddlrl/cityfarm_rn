@@ -223,14 +223,14 @@ const App = () => {
     }
   }
 
-  // useEffect(() => {
-  //   pay(['com.semicolons.basic']).then((res) => {
-  //     requestPurchase('com.semicolons.basic').then((res) => {
-  //       console.log('결제테스트');
-  //       console.log(res);
-  //     })
-  //   })
-  // }, []) //결제 테스트용
+  useEffect(() => {
+    pay(['com.semicolons.basic']).then((res) => {
+      requestPurchase('com.semicolons.basic').then((res) => {
+        console.log('결제테스트');
+        console.log(res);
+      })
+    })
+  }, []) //결제 테스트용
 
   function onMessage(event) {
     console.log(event.nativeEvent.data)
