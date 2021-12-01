@@ -509,6 +509,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = cityfarm/cityfarm.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8ZBSHPN5PT;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = cityfarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,6 +537,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = cityfarm/cityfarm.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8ZBSHPN5PT;
 				INFOPLIST_FILE = cityfarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
